@@ -4,6 +4,10 @@
   </div>
 </template>
 
+<style>
+@import 'assets/styles/global.css';
+</style>
+
 <script>
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -17,7 +21,3 @@ export default {
   }
 }
 </script>
-
-<style>
-  @import './assets/styles/global.css';
-</style>

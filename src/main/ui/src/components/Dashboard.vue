@@ -1,45 +1,43 @@
 <template>
-  <div class="hello">
-    <Header />
-    <div class="container mrgnbtm">
-          <div class="row">
-            <div class="col-md-8">
-                <CreateUser @createUser="userCreate($event)" />
-            </div>
-            <div class="col-md-4">
-                <DisplayBoard :numberOfUsers="numberOfUsers" @getAllUsers="getAllUsers()" />
-            </div>
-          </div>
-    </div>
-    <div class="row mrgnbtm">
-        <Users v-if="users.length > 0" :users="users" />
-    </div>
+  <div style="height: 100%;">
+    <Header/>
+
+    <video-player :options="videoOptions"/>
+
   </div>
 </template>
 
 <script>
 import Header from './Header.vue'
-import CreateUser from './CreateUser.vue'
-import DisplayBoard from './DisplayBoard.vue'
-import Users from './Users.vue'
-import { getAllUsers, createUser } from '../services/UserService'
+import VideoPlayer from "@/components/VideoPlayer";
 
 export default {
   name: 'Dashboard',
   components: {
     Header,
-    CreateUser,
-    DisplayBoard,
-    Users
+    VideoPlayer
   },
   data() {
-      return {
-          users: [],
-          numberOfUsers: 0
+    return {
+      videoOptions: {
+        inactivityTimeout: 0,
+        controlBar: {
+          volumePanel: {inline: false}
+        },
+        autoplay: true,
+        controls: true,
+        sources: [
+          {
+            src:
+                "/city.mp4",
+            type: "video/mp4"
+          }
+        ]
       }
+    }
   },
   methods: {
-    getAllUsers() {
+    /*getAllUsers() {
       getAllUsers().then(response => {
         console.log(response)
         this.users = response
@@ -53,10 +51,10 @@ export default {
         console.log(response);
         this.getAllUsers();
       });
-    }
+    }*/
   },
-  mounted () {
+  /*mounted () {
     this.getAllUsers();
-  }
+  }*/
 }
 </script>

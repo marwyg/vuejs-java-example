@@ -1,0 +1,63 @@
+
+
+.vjs-marker {
+    border-radius: 0 !important;
+    width: 3px !important;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    opacity: 1;
+    height: 100%;
+    transition: opacity 0.2s ease;
+    -webkit-transition: opacity 0.2s ease;
+    -moz-transition: opacity 0.2s ease;
+    z-index: 100;
+}
+.vjs-marker:hover {
+    cursor: pointer;
+    -webkit-transform: scale(2, 1.1);
+    -moz-transform: scale(2, 1.1);
+    -o-transform: scale(2, 1.1);
+    -ms-transform: scale(2, 1.1);
+    transform: scale(2, 1.1);
+}
+.vjs-tip {
+    visibility: hidden;
+    display: block;
+    opacity: 0.8;
+    padding: 5px;
+    font-size: 10px;
+    position: absolute;
+    z-index: 100000;
+    top: 40px
+}
+.vjs-tip .vjs-tip-arrow {
+    background: url(data:image/gif;base64,R0lGODlhCQAJAIABAAAAAAAAACH5BAEAAAEALAAAAAAJAAkAAAIRjAOnwIrcDJxvwkplPtchVQAAOw==) no-repeat top left;
+    bottom: 0;
+    left: 50%;
+    margin-left: -4px;
+    background-position: bottom left;
+    position: absolute;
+    width: 0px;
+    height: 0px;
+}
+.vjs-tip .vjs-tip-inner {
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    padding: 5px 8px 4px 8px;
+    background-color: black;
+    color: white;
+    max-width: 200px;
+    text-align: center;
+}
+.vjs-break-overlay {
+    visibility: hidden;
+    position: absolute;
+    z-index: 100000;
+    top: 0;
+}
+.vjs-break-overlay .vjs-break-overlay-text {
+    padding: 9px;
+    text-align: center;
+}
